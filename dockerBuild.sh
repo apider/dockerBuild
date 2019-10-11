@@ -13,5 +13,6 @@ cp Dockerfile requirements.txt $1
 cd $1
 sudo docker build -t "$1":v1 .
 sudo docker run --name="$1" -it -p 5000:5000 "$1":v1
+sudo docker rm $1
 echo ""; echo "To start container in background:"
 echo sudo docker run --name="$1" -d -p 5000:5000 "$1":v1
