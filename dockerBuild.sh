@@ -13,7 +13,7 @@ mkdir $1
 git clone "$2" "$1"
 cp Dockerfile $1
 cd $1
-sudo docker build -t "$1" .
+sudo docker build --rm -t "$1" .
 sudo docker run --name="$1" -it -p 5000:5000 "$1"
 sudo docker rm $1
 echo ""; echo "To start container in background:"
