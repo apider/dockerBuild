@@ -4,7 +4,7 @@ if [ -z "$1" ] || [ -z "$2" ] || [ -z "$3" ] ;then
 	exit 1
 fi
 
-echo --- Stopin and Removing old container with same name: $1
+echo --- Stopping and Removing old container with same name: $1
 sudo docker stop $1
 sudo docker rm $1
 echo --- Building container: $1
