@@ -1,5 +1,11 @@
 # dockerBuild
 
+## Description
+
+Pulls repo containing code + Dockerfile + requirements.txt and builds & starts a docker container.
+
+Exposes specified port (arg3)
+
 ## Usage
 
 Usage: ./deploy.sh projectName expose-port git-repo
