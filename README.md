@@ -4,7 +4,7 @@
 
 Pulls repo containing code + Dockerfile + requirements.txt and builds & starts a docker container.
 
-Exposes specified port (arg3)
+Exposes specified port.
 
 ## Usage
 
