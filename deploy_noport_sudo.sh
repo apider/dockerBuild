@@ -5,12 +5,12 @@ if [ -z "$1" ] || [ -z "$2" ] ;then
 fi
 
 echo --- Stopping and Removing old container with same name: $1
-docker stop $1
-docker rm $1
+sudo docker stop $1
+sudo docker rm $1
 echo --- Building container: $1
-docker build --rm -t "$1" $2
+sudo docker build --rm -t "$1" $2
 echo --- Running container: $1
-docker run --restart=always --name="$1" -d "$1"
+sudo docker run --restart=always --name="$1" -d "$1"
 echo --- Container $1 started.
-docker ps | grep $1
+sudo docker ps | grep $1
 echo --- Done
