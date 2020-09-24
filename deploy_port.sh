@@ -7,6 +7,7 @@ fi
 echo --- Stopping and Removing old container with same name: $1
 docker stop $1
 docker rm $1
+docker rmi $1
 echo --- Building container: $1
 docker build --rm -t "$1" $3
 echo --- Running container: $1
