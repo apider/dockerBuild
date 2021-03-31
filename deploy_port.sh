@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [ -z "$1" ] || [ -z "$2" ] || [ -z "$3" ] ;then
 	echo Usage: $0 projectName expose-port git-repo
 	echo Example: $0 test123 5000 git@github.com:xxx/xxx.git
