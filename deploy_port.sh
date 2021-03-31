@@ -11,6 +11,7 @@ docker rmi $1
 echo --- Building container: $1
 docker build --rm -t "$1" $3
 echo --- Running container: $1
+echo docker run --restart=always --name="$1" -d -p $2:5001 "$1"
 docker run --restart=always --name="$1" -d -p $2:5001 "$1"
 echo --- Container $1 started.
 docker ps | grep $1
