@@ -10,10 +10,10 @@ docker stop $1
 docker rm $1
 docker rmi $1
 echo --- Building container: $1
-docker build --rm -t "$1" $3
+docker build --rm -t "$1" $2
 echo --- Running container: $1
-echo docker run --restart=always --name="$1" -d -p $EXT_PORT:$INT_PORT "$1"
-docker run --restart=always --name="$1" -d -p $EXT_PORT:$INT_PORT "$1"
+echo docker run --restart=always --name="$1" -d -p "$EXT_PORT:$INT_PORT" "$1"
+docker run --restart=always --name="$1" -d -p "$EXT_PORT:$INT_PORT" "$1"
 echo --- Container $1 started.
 docker ps | grep $1
 echo --- Done
