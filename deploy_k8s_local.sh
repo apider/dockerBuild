@@ -27,4 +27,5 @@ rm -rf $1
 echo ""
 echo Deployed: $1, ns: $3, image: $1:$4
 echo To revert to previous run: kubectl set image deployments/$1 $1=localhost:32000/$1:"<previous-version>"
+echo Or: kubectl rollout undo deployments/$1
 echo --- Done
