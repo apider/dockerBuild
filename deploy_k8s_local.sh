@@ -17,7 +17,7 @@ git clone $2
 echo --- Re/starting deployment: $1 from manifest.yaml
 #kubectl delete -f $1/manifest.yaml
 kubectl apply -f $1/manifest.yaml
-kubectl set image deployments/$1 $1=localhost:32000/$1:$4
+kubectl set -n $3 image deployments/$1 $1=localhost:32000/$1:$4
 echo --- Removing repo: $2
 rm -rf $1
 #echo --- kubectl rollout -n $3 restart deployment/$1
