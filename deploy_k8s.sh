@@ -26,6 +26,6 @@ rm -rf $1
 #kubectl get all -n $3
 echo Deployed: $1, ns: $3, image: $1:$4
 echo ""
-echo To revert to previous run: kubectl set image deployments/$1 $1=registry.home:6000/$1:"<previous-version>"
-echo Or: kubectl rollout undo deployments/$1
+echo To revert to previous run: kubectl set -n $3 image deployments/$1 $1=registry.home:6000/$1:"<previous-version>"
+echo Or: kubectl rollout undo -n $3 deployments/$1
 echo --- Done
