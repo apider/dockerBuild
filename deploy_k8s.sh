@@ -24,7 +24,7 @@ rm -rf $1
 #kubectl rollout -n $3 restart deployment/$1
 #kubectl rolling-update -n $3 $1
 #kubectl get all -n $3
-echo Deployed: $1, ns: $3, image: $1:$4
 echo ""
-echo To revert to previous run: kubectl set image deployments/$1 $1=localhost:32000/$1:<previous-version>
+echo Deployed: $1, ns: $3, image: $1:$4
+echo To revert to previous run: kubectl set image deployments/$1 $1=localhost:32000/$1:"<previous-version>"
 echo --- Done
