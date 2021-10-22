@@ -30,3 +30,5 @@ echo ""
 echo To revert to previous run: kubectl set -n $3 image deployments/$1 $1=registry.home:6000/$1:"<previous-version>"
 echo Or: kubectl rollout undo -n $3 deployments/$1
 echo --- Done
+sleep 1
+kubectl -n $3 get all
