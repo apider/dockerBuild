@@ -26,10 +26,12 @@ kubectl rollout -n $2 restart deployment/$NAME
 #kubectl rolling-update -n $3 $1
 echo --- Removing local repo: $1
 rm -rf $NAME
+echo ""
+echo --- Done
 echo Deployed: $NAME, ns: $2, image: $NAME:latest
 echo ""
 echo To revert to previous run: kubectl set -n $2 image deployments/$NAME $NAME=registry.home:6000/$1:"<previous-version>"
 echo Or: kubectl rollout undo -n $2 deployments/$NAME
-echo --- Done
+echo ""
 sleep 2
 kubectl -n $2 get all
