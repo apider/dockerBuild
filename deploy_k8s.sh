@@ -20,7 +20,7 @@ git clone $1
 
 echo --- Re/starting deployment: $1 from manifest.yaml
 #kubectl delete -f $1/manifest.yaml
-kubectl apply -f $NAME/manifest.yaml
+kubectl apply -f $NAME/manifest.yaml --record
 # kubectl set -n $3 image deployments/$1 $1=registry.home:6000/$1:latest
 kubectl rollout -n $2 restart deployment/$NAME
 #kubectl rolling-update -n $3 $1
